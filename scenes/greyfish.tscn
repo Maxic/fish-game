@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://byfleopsjhxab"]
+
+[ext_resource type="Script" path="res://scripts/goldfish.gd" id="1_6tv3g"]
+[ext_resource type="Texture2D" uid="uid://rvshwj5hokrx" path="res://sprite_assets/Grey.png" id="1_15y6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3kyh"]
+atlas = ExtResource("1_15y6w")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j54f"]
+atlas = ExtResource("1_15y6w")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifekq"]
+atlas = ExtResource("1_15y6w")
+region = Rect2(64, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt1l6"]
+atlas = ExtResource("1_15y6w")
+region = Rect2(96, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elxg4"]
+atlas = ExtResource("1_15y6w")
+region = Rect2(128, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnbcn"]
+atlas = ExtResource("1_15y6w")
+region = Rect2(160, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h2st"]
+atlas = ExtResource("1_15y6w")
+region = Rect2(192, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmto2"]
+atlas = ExtResource("1_15y6w")
+region = Rect2(224, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slg0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3kyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j54f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifekq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt1l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elxg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnbcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h2st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmto2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Greyfish" type="Node2D"]
+script = ExtResource("1_6tv3g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_slg0m")
+autoplay = "default"
+frame_progress = 0.288927

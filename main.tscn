@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtdo52ovv26ln"]
+
+[ext_resource type="PackedScene" uid="uid://c2woqabtj2fun" path="res://scenes/hook.tscn" id="1_s2nei"]
+[ext_resource type="Script" path="res://main.gd" id="1_smu5s"]
+[ext_resource type="PackedScene" uid="uid://dkfmtdknv4r7b" path="res://scenes/background.tscn" id="2_acv0d"]
+[ext_resource type="PackedScene" uid="uid://c7qho6wt3roll" path="res://scenes/bubble_spawner.tscn" id="3_wt08c"]
+[ext_resource type="PackedScene" uid="uid://chdayi656ocbs" path="res://scenes/camera.tscn" id="5_pjlgh"]
+[ext_resource type="PackedScene" uid="uid://bw74o0v7kuh4t" path="res://scenes/fish_spawner.tscn" id="6_gyndo"]
+
+[sub_resource type="TileSet" id="TileSet_vnumj"]
+
+[node name="root" type="Node"]
+script = ExtResource("1_smu5s")
+
+[node name="background" parent="." instance=ExtResource("2_acv0d")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_vnumj")
+format = 2
+
+[node name="BubbleSpawner" parent="." instance=ExtResource("3_wt08c")]
+
+[node name="hook" parent="." instance=ExtResource("1_s2nei")]
+position = Vector2(72, 198)
+
+[node name="Camera" parent="." instance=ExtResource("5_pjlgh")]
+
+[node name="FishSpawner" parent="." instance=ExtResource("6_gyndo")]

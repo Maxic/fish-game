@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0d3bhj17njho"]
+
+[ext_resource type="Texture2D" uid="uid://dhsf1bfxhcauq" path="res://sprite_assets/Orange.png" id="1_eeabd"]
+[ext_resource type="Script" path="res://scripts/goldfish.gd" id="1_uod02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wstbf"]
+atlas = ExtResource("1_eeabd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58ve8"]
+atlas = ExtResource("1_eeabd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7g1i"]
+atlas = ExtResource("1_eeabd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ub73"]
+atlas = ExtResource("1_eeabd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en2dc"]
+atlas = ExtResource("1_eeabd")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67qcf"]
+atlas = ExtResource("1_eeabd")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vril"]
+atlas = ExtResource("1_eeabd")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohtsh"]
+atlas = ExtResource("1_eeabd")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fcruv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wstbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58ve8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7g1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ub73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en2dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67qcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vril")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohtsh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Goldfish" type="Node2D"]
+script = ExtResource("1_uod02")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fcruv")
+autoplay = "default"
+frame_progress = 0.110668
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
