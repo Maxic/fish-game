@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://bw8pxrf3q6a3g"]
+
+[ext_resource type="Texture2D" uid="uid://f44ln5i6yfjg" path="res://sprite_assets/Shark.png" id="1_veyq1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0s1u"]
+atlas = ExtResource("1_veyq1")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7me6n"]
+atlas = ExtResource("1_veyq1")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rletc"]
+atlas = ExtResource("1_veyq1")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3ogo"]
+atlas = ExtResource("1_veyq1")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f105v"]
+atlas = ExtResource("1_veyq1")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tyw1"]
+atlas = ExtResource("1_veyq1")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmde7"]
+atlas = ExtResource("1_veyq1")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nofln"]
+atlas = ExtResource("1_veyq1")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1tt3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0s1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7me6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rletc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3ogo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f105v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tyw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmde7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nofln")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Shark" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n1tt3")
+autoplay = "default"
+frame_progress = 0.0318563

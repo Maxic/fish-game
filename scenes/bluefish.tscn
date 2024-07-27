@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwx0n83qh2qi0"]
+[gd_scene load_steps=13 format=3 uid="uid://bwx0n83qh2qi0"]
 
 [ext_resource type="Texture2D" uid="uid://cvguyxtdp4nef" path="res://sprite_assets/Blue.png" id="1_mtgog"]
 [ext_resource type="Script" path="res://scripts/goldfish.gd" id="1_xqivf"]
@@ -67,6 +67,8 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxw5r"]
+
 [node name="Bluefish" type="Node2D"]
 script = ExtResource("1_xqivf")
 
@@ -76,3 +78,10 @@ autoplay = "default"
 frame_progress = 0.379245
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_fxw5r")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

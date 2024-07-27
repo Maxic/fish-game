@@ -21,7 +21,8 @@ format = 2
 [node name="BubbleSpawner" parent="." instance=ExtResource("3_wt08c")]
 
 [node name="hook" parent="." instance=ExtResource("1_s2nei")]
-position = Vector2(72, 198)
+position = Vector2(160, 200)
+speed = null
 
 [node name="Camera" parent="." instance=ExtResource("5_pjlgh")]
 

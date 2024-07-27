@@ -1,5 +1,4 @@
-extends Node2D
-
+extends StaticBody2D
 
 @export var speed: float = 70.0
 var direction: Vector2 = Vector2(1,1)
@@ -30,4 +29,5 @@ func _physics_process(delta):
 
 	translate(direction * delta)
 	
-	
+func hit():
+	SceneManager.goto_game_over_screen()

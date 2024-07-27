@@ -26,7 +26,7 @@ func _physics_process(delta):
 	if direction.x == 0:
 		new_x_pos = lerp(global_line_origin.x, (self.global_position).x, .05)
 	else:
-		new_x_pos = global_line_origin.x + (direction.normalized().x * 3)
+		new_x_pos = global_line_origin.x + (direction.normalized().x * 6)
 	
 	# Clamp origin so it doesnt go all the way out there
 	global_line_origin.x = clamp(new_x_pos, 0, window_size.x)
@@ -37,7 +37,7 @@ func _physics_process(delta):
 	
 	for i in range(0, points_amount):
 		var straight_line_point = to_local(to_global(points[points.size()-1]).lerp(global_line_origin, weight))
-		points[i] = Vector2(straight_line_point.x*(i*offset+1)*(i*offset+1), straight_line_point.y)
+		points[i] = Vector2(straight_line_point.x*(i*offset+1)*(i*(offset)+1), straight_line_point.y)
 		weight -= weight_step
 	
 	points[points_amount-1] = to_local(to_global(Vector2(sprite_position.x, sprite_position.y)))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0d3bhj17njho"]
+[gd_scene load_steps=13 format=3 uid="uid://c0d3bhj17njho"]
 
 [ext_resource type="Texture2D" uid="uid://dhsf1bfxhcauq" path="res://sprite_assets/Orange.png" id="1_eeabd"]
 [ext_resource type="Script" path="res://scripts/goldfish.gd" id="1_uod02"]
@@ -67,6 +67,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfofw"]
+
 [node name="Goldfish" type="Node2D"]
 script = ExtResource("1_uod02")
 
@@ -77,4 +79,10 @@ frame_progress = 0.110668
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_yfofw")
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

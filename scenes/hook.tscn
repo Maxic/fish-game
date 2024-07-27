@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2woqabtj2fun"]
+[gd_scene load_steps=5 format=3 uid="uid://c2woqabtj2fun"]
 
 [ext_resource type="Script" path="res://scripts/hook.gd" id="1_dpcp8"]
 [ext_resource type="Texture2D" uid="uid://dpfnjyy8ibi8s" path="res://sprite_assets/hook.png" id="2_xyhvf"]
 [ext_resource type="Script" path="res://scripts/line.gd" id="3_t0rqq"]
 
-[node name="hook" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1m3l"]
+radius = 6.0
+
+[node name="hook" type="StaticBody2D"]
 script = ExtResource("1_dpcp8")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_xyhvf")
@@ -17,3 +21,7 @@ autostart = true
 [node name="line" type="Line2D" parent="."]
 width = 1.0
 script = ExtResource("3_t0rqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_a1m3l")
