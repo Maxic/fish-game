@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwx0n83qh2qi0"]
+
+[ext_resource type="Texture2D" uid="uid://cvguyxtdp4nef" path="res://sprite_assets/Blue.png" id="1_mtgog"]
+[ext_resource type="Script" path="res://scripts/goldfish.gd" id="1_xqivf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8iq2"]
+atlas = ExtResource("1_mtgog")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w8t3"]
+atlas = ExtResource("1_mtgog")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxv7v"]
+atlas = ExtResource("1_mtgog")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gua41"]
+atlas = ExtResource("1_mtgog")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6af3y"]
+atlas = ExtResource("1_mtgog")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohdx8"]
+atlas = ExtResource("1_mtgog")
+region = Rect2(160, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu147"]
+atlas = ExtResource("1_mtgog")
+region = Rect2(192, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efrb7"]
+atlas = ExtResource("1_mtgog")
+region = Rect2(224, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7525"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8iq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w8t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxv7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gua41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6af3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohdx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu147")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efrb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Bluefish" type="Node2D"]
+script = ExtResource("1_xqivf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a7525")
+autoplay = "default"
+frame_progress = 0.379245
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

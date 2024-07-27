@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_f1ymx"]
 [ext_resource type="Texture2D" uid="uid://kqcqppr2flpj" path="res://sprite_assets/Bubble - 8x8.png" id="2_pj53b"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lhaka"]
-atlas = ExtResource("2_pj53b")
-region = Rect2(24, 0, 8, 8)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7luby"]
 atlas = ExtResource("2_pj53b")
 region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhaka"]
+atlas = ExtResource("2_pj53b")
+region = Rect2(24, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyehq"]
 atlas = ExtResource("2_pj53b")
@@ -39,10 +39,10 @@ region = Rect2(64, 0, 8, 8)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lhaka")
+"texture": SubResource("AtlasTexture_7luby")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7luby")
+"texture": SubResource("AtlasTexture_lhaka")
 }],
 "loop": true,
 "name": &"idle",
@@ -79,8 +79,8 @@ script = ExtResource("1_f1ymx")
 sprite_frames = SubResource("SpriteFrames_ex1n5")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.260622
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
