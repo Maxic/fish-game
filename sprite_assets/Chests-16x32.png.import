@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1c3wmwllh2t1"
-path="res://.godot/imported/water_bg.png-7dd525b0e57c182bc1734e110f719afc.ctex"
+uid="uid://ccrtbjqfoo6ug"
+path="res://.godot/imported/Chests-16x32.png-39c1163c97b4b51ee0e73a843a9413c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite_assets/water_bg.png"
-dest_files=["res://.godot/imported/water_bg.png-7dd525b0e57c182bc1734e110f719afc.ctex"]
+source_file="res://sprite_assets/Chests-16x32.png"
+dest_files=["res://.godot/imported/Chests-16x32.png-39c1163c97b4b51ee0e73a843a9413c5.ctex"]
 
 [params]
 

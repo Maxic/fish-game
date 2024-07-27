@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://q7uap5djet0d"]
+
+[ext_resource type="Texture2D" uid="uid://co5hb7q3aawma" path="res://sprite_assets/Seaweed_Dark.png" id="1_acdpv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl2m1"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(0, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q65ju"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(16, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twmm1"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(32, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oec5x"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(48, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqwwr"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(64, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcx13"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(80, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cun5r"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(96, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vldr"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(112, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfh2w"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(128, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikjol"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(144, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uplb"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(160, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlotr"]
+atlas = ExtResource("1_acdpv")
+region = Rect2(176, 128, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fp558"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl2m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q65ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twmm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oec5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqwwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcx13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cun5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vldr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfh2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikjol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uplb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlotr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Seaweed" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fp558")
+autoplay = "default"
+frame_progress = 0.559246
