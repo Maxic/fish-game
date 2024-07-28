@@ -40,7 +40,7 @@ func _physics_process(delta):
 	
 	for i in range(0, points_amount):
 		var straight_line_point = to_local(to_global(points[points.size()-1]).lerp(global_line_origin, weight))
-		points[i] = Vector2(straight_line_point.x*(i*offset+1)*(i*(offset)+1), straight_line_point.y)
+		points[i] = Vector2(straight_line_point.x*(i*offset+1), straight_line_point.y)
 		weight -= weight_step
 	
 	points[points_amount-1] = to_local(to_global(Vector2(sprite_position.x, sprite_position.y)))

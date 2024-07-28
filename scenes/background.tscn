@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkfmtdknv4r7b"]
+[gd_scene load_steps=11 format=3 uid="uid://dkfmtdknv4r7b"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_kemwl"]
 [ext_resource type="Texture2D" uid="uid://twc4srufrdpr" path="res://sprite_assets/bottom.png" id="2_j3s1i"]
@@ -28,6 +28,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q43xv"]
+size = Vector2(71, 351.75)
+
 [node name="background" type="Node2D"]
 rotation = 1.5708
 script = ExtResource("1_kemwl")
@@ -55,9 +58,8 @@ texture = ExtResource("2_j3s1i")
 position = Vector2(2981, -157.011)
 
 [node name="Chest" parent="." instance=ExtResource("3_rwt33")]
-position = Vector2(3346, -154)
+position = Vector2(3337, -160)
 rotation = -1.5708
-scale = Vector2(2, 2)
 
 [node name="seaweeds" type="Node2D" parent="."]
 
@@ -127,5 +129,12 @@ position = Vector2(3380, -51.0002)
 rotation = -1.5708
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bapc0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(3397, -148)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(14, -17)
+shape = SubResource("RectangleShape2D_q43xv")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
