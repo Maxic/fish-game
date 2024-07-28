@@ -1,11 +1,13 @@
 extends Node
 
 var current_scene = null
+var game_over: bool = false
 
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
-
+		
+		
 func goto_game_over_screen():
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.

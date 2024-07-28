@@ -9,7 +9,6 @@ radius = 6.0
 
 [node name="hook" type="StaticBody2D"]
 script = ExtResource("1_dpcp8")
-speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_xyhvf")

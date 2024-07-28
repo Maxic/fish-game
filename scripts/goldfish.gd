@@ -13,7 +13,8 @@ func _ready():
 
 
 func _physics_process(delta):
-	translate(direction * speed)
+	if not SceneManager.game_over:
+		translate(direction * speed)
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
@@ -21,4 +22,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_area_2d_body_entered(body):
-	body.hit()
+	SceneManager.game_over = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtdo52ovv26ln"]
+[gd_scene load_steps=10 format=3 uid="uid://dtdo52ovv26ln"]
 
 [ext_resource type="PackedScene" uid="uid://c2woqabtj2fun" path="res://scenes/hook.tscn" id="1_s2nei"]
 [ext_resource type="Script" path="res://main.gd" id="1_smu5s"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c7qho6wt3roll" path="res://scenes/bubble_spawner.tscn" id="3_wt08c"]
 [ext_resource type="PackedScene" uid="uid://chdayi656ocbs" path="res://scenes/camera.tscn" id="5_pjlgh"]
 [ext_resource type="PackedScene" uid="uid://bw74o0v7kuh4t" path="res://scenes/fish_spawner.tscn" id="6_gyndo"]
+[ext_resource type="AudioStream" uid="uid://cvyd6ghqybpxt" path="res://sprite_assets/09. Dire, Dire Docks.mp3" id="7_cxvy8"]
+[ext_resource type="PackedScene" uid="uid://d2vj3qhh5rr6d" path="res://scenes/overlay.tscn" id="8_owv5g"]
 
 [sub_resource type="TileSet" id="TileSet_vnumj"]
 
@@ -22,8 +24,18 @@ format = 2
 
 [node name="hook" parent="." instance=ExtResource("1_s2nei")]
 position = Vector2(160, 200)
-speed = null
 
 [node name="Camera" parent="." instance=ExtResource("5_pjlgh")]
 
 [node name="FishSpawner" parent="." instance=ExtResource("6_gyndo")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_cxvy8")
+autoplay = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="AudioStreamPlayer2D"]
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Overlay" parent="CanvasLayer" instance=ExtResource("8_owv5g")]

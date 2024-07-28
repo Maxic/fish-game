@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d7xy2jdncc4b"
+path="res://.godot/imported/04. Koopa Troopa Beach.mp3-e80e92ccda7fc8f16328b27704d5887c.mp3str"
+
+[deps]
+
+source_file="res://sprite_assets/04. Koopa Troopa Beach.mp3"
+dest_files=["res://.godot/imported/04. Koopa Troopa Beach.mp3-e80e92ccda7fc8f16328b27704d5887c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

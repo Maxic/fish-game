@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://83w65gordcr8"]
+[gd_scene load_steps=29 format=3 uid="uid://83w65gordcr8"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1n8u2"]
 [ext_resource type="Texture2D" uid="uid://b1wl8ty2njdmw" path="res://sprite_assets/desert_tiles.png" id="1_lo0g4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://pyocctxq1em6" path="res://sprite_assets/SeaAngler.png" id="5_dj5fa"]
 [ext_resource type="FontFile" uid="uid://bhnfop0absd7m" path="res://sprite_assets/m5x7.ttf" id="5_ufjpy"]
 [ext_resource type="Texture2D" uid="uid://ccrtbjqfoo6ug" path="res://sprite_assets/Chests-16x32.png" id="6_lvol0"]
+[ext_resource type="AudioStream" uid="uid://bnlhyl3acxsub" path="res://sprite_assets/22. 5th-8th Place Results.mp3" id="10_t8xga"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oc61"]
 texture = ExtResource("1_lo0g4")
@@ -241,3 +242,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_t8xga")
+autoplay = true

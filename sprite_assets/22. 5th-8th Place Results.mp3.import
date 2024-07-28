@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnlhyl3acxsub"
+path="res://.godot/imported/22. 5th-8th Place Results.mp3-e44ec0d62be8c4a06c62b78a0859a3a2.mp3str"
+
+[deps]
+
+source_file="res://sprite_assets/22. 5th-8th Place Results.mp3"
+dest_files=["res://.godot/imported/22. 5th-8th Place Results.mp3-e44ec0d62be8c4a06c62b78a0859a3a2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -21,6 +21,9 @@ func _physics_process(delta):
 		0	
 	)
 	
+	if SceneManager.game_over:
+		direction = Vector2(0,0)
+	
 	# Get new origin point
 	var new_x_pos: float 
 	if direction.x == 0:
