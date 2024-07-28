@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://pyocctxq1em6" path="res://sprite_assets/SeaAngler.png" id="1_6k7he"]
 [ext_resource type="Script" path="res://scripts/anglerfish.gd" id="1_iwgop"]
-[ext_resource type="Texture2D" uid="uid://dwcsp1q5yt4rd" path="res://sprite_assets/light.png" id="3_66lqm"]
+[ext_resource type="Texture2D" uid="uid://cr023ijrmhxqr" path="res://sprite_assets/light_circle.png" id="3_pso85"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv0bs"]
 atlas = ExtResource("1_6k7he")
@@ -76,11 +76,12 @@ sprite_frames = SubResource("SpriteFrames_j1ef2")
 autoplay = "default"
 frame_progress = 0.309416
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
+position = Vector2(13, -7)
+color = Color(0.876602, 0.918921, 0, 1)
+energy = 1.5
+texture = ExtResource("3_pso85")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.582243, 0.579511, 2.70597e-08, 1)
-texture = ExtResource("3_66lqm")
-texture_scale = 5.0
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

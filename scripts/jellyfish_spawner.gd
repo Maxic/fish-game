@@ -2,13 +2,18 @@ extends Node2D
 
 @onready var jellyfish_scene = preload("res://scenes/jellyfish.tscn")
 @onready var window_size = get_window().size
+var timer_started: bool = false
 
 func _ready():
 	randomize()
 
+func _physics_process(delta):
+	if GameState.middle_reached and not timer_started:
+		timer_started = true
+		$Timer.start()
+
 func _on_timer_timeout():
 	$Timer.wait_time = randf_range(3, 7)
-	
 	if GameState.bottom_reached:
 		$Timer.stop()
 	

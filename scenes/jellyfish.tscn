@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bydieyforms4u"]
+[gd_scene load_steps=13 format=3 uid="uid://bydieyforms4u"]
 
 [ext_resource type="Texture2D" uid="uid://mqp7o43cwxq1" path="res://sprite_assets/JellyFish.png" id="1_2rdlv"]
 [ext_resource type="Script" path="res://scripts/jellyfish.gd" id="1_tl4vt"]
+[ext_resource type="Texture2D" uid="uid://i5pl134qr2ct" path="res://sprite_assets/light_circle_jelly.png" id="3_5vsh4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtl3d"]
 atlas = ExtResource("1_2rdlv")
@@ -81,3 +82,7 @@ sprite_frames = SubResource("SpriteFrames_jwq4q")
 animation = &"blue"
 autoplay = "blue"
 frame_progress = 0.466182
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.822965, 0.907555, 1.33727e-06, 1)
+texture = ExtResource("3_5vsh4")

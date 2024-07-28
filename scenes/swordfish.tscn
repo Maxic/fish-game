@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://c727uprdv28qb"]
+
+[ext_resource type="Script" path="res://scripts/swordfish.gd" id="1_ehaf4"]
+[ext_resource type="Texture2D" uid="uid://bbp4iyay7ya2b" path="res://sprite_assets/SwordFish.png" id="1_lq1j0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s37h"]
+atlas = ExtResource("1_lq1j0")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3kf4"]
+atlas = ExtResource("1_lq1j0")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kqq7"]
+atlas = ExtResource("1_lq1j0")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc6qn"]
+atlas = ExtResource("1_lq1j0")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10p8s"]
+atlas = ExtResource("1_lq1j0")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jfhb"]
+atlas = ExtResource("1_lq1j0")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p3oc"]
+atlas = ExtResource("1_lq1j0")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4fkr"]
+atlas = ExtResource("1_lq1j0")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0drt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s37h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3kf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kqq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc6qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10p8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jfhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p3oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4fkr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Swordfish" type="Node2D"]
+script = ExtResource("1_ehaf4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.510419, 0.594936, 0.707946, 1)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_i0drt")
+frame_progress = 0.813964
