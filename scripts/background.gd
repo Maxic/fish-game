@@ -11,6 +11,14 @@ func _physics_process(delta):
 		translate(direction * speed)
 
 
+
+func _on_visible_on_screen_notifier_2d_mid_screen_exited():
+	GameState.middle_reached = true
+	print("middle")
+
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	scroll = false
 	GameState.bottom_reached = true
+
+
+	

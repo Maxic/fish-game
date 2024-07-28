@@ -1,81 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtdo52ovv26ln"]
+[gd_scene load_steps=11 format=3 uid="uid://dtdo52ovv26ln"]
 
 [ext_resource type="PackedScene" uid="uid://c2woqabtj2fun" path="res://scenes/hook.tscn" id="1_s2nei"]
 [ext_resource type="Script" path="res://main.gd" id="1_smu5s"]
 [ext_resource type="PackedScene" uid="uid://dkfmtdknv4r7b" path="res://scenes/background.tscn" id="2_acv0d"]
-[ext_resource type="Texture2D" uid="uid://b1wl8ty2njdmw" path="res://sprite_assets/desert_tiles.png" id="3_1nwqf"]
 [ext_resource type="PackedScene" uid="uid://c7qho6wt3roll" path="res://scenes/bubble_spawner.tscn" id="3_wt08c"]
-[ext_resource type="Texture2D" uid="uid://ccrtbjqfoo6ug" path="res://sprite_assets/Chests-16x32.png" id="4_kkxh2"]
 [ext_resource type="PackedScene" uid="uid://chdayi656ocbs" path="res://scenes/camera.tscn" id="5_pjlgh"]
-[ext_resource type="PackedScene" uid="uid://bw74o0v7kuh4t" path="res://scenes/fish_spawner.tscn" id="6_gyndo"]
+[ext_resource type="PackedScene" uid="uid://bw74o0v7kuh4t" path="res://scenes/shallow_fish_spawner.tscn" id="6_gyndo"]
 [ext_resource type="AudioStream" uid="uid://cvyd6ghqybpxt" path="res://sprite_assets/09. Dire, Dire Docks.mp3" id="7_cxvy8"]
+[ext_resource type="PackedScene" uid="uid://b5ht8bann6apq" path="res://scenes/deep_fish_spawner.tscn" id="8_6xqhc"]
 [ext_resource type="PackedScene" uid="uid://d2vj3qhh5rr6d" path="res://scenes/overlay.tscn" id="8_owv5g"]
-[ext_resource type="PackedScene" uid="uid://q7uap5djet0d" path="res://scenes/seaweed.tscn" id="11_mf14u"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pfh0"]
-texture = ExtResource("3_1nwqf")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lsoms"]
-texture = ExtResource("4_kkxh2")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_vnumj"]
-sources/0 = SubResource("TileSetAtlasSource_5pfh0")
-sources/1 = SubResource("TileSetAtlasSource_lsoms")
+[ext_resource type="PackedScene" uid="uid://dii26uwtnqvpl" path="res://scenes/jellyfish_spawner.tscn" id="9_gnpvq"]
 
 [node name="root" type="Node"]
 script = ExtResource("1_smu5s")
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_vnumj")
-format = 2
-layer_0/tile_data = PackedInt32Array(1900544, 0, 0, 1900545, 0, 0, 1900546, 0, 0, 1900547, 0, 0, 1900548, 0, 0, 1900549, 0, 0, 1900550, 0, 0, 1900551, 0, 0, 1900552, 0, 0, 1900553, 0, 0, 1900554, 0, 0, 1900555, 0, 0, 1900556, 0, 0, 1900557, 0, 0, 1900558, 0, 0, 1900559, 0, 0, 1900560, 0, 0, 1900561, 0, 0, 1900562, 0, 0, 1900563, 0, 0, 1835027, 0, 0, 1835026, 0, 0, 1835025, 0, 0, 1835024, 0, 0, 1835023, 0, 0, 1835022, 0, 0, 1835021, 0, 0, 1835020, 0, 0, 1835019, 0, 0, 1835018, 0, 0, 1835017, 0, 0, 1835016, 0, 0, 1835008, 0, 0, 1835009, 0, 0, 1835010, 0, 0, 1835011, 0, 0, 1835012, 0, 0, 1835013, 0, 0, 1835014, 0, 0, 1835015, 0, 0, 1769485, 0, 0, 1769486, 0, 0, 1769487, 0, 0, 1769488, 0, 0, 1769489, 0, 0, 1769490, 0, 0, 1769491, 0, 0, 1769484, 0, 0, 1769483, 0, 0, 1769482, 0, 0, 1769481, 0, 0, 1769480, 0, 0, 1769479, 0, 0, 1769478, 0, 0, 1769477, 0, 0, 1769476, 0, 0, 1769475, 0, 0, 1769474, 0, 0, 1769473, 0, 0, 1769472, 0, 0, 1703936, 0, 0, 1703937, 0, 0, 1703938, 0, 0, 1703939, 0, 0, 1703940, 0, 0, 1703941, 0, 0, 1703942, 0, 0, 1703943, 0, 0, 1703944, 0, 0, 1703945, 0, 0, 1703946, 0, 0, 1703947, 0, 0, 1703948, 0, 0, 1703949, 0, 0, 1703950, 0, 0, 1703955, 0, 0, 1703954, 0, 0, 1703953, 0, 0, 1703952, 0, 0, 1703951, 0, 0, 1638419, 0, 0, 1638418, 0, 0, 1638417, 0, 0, 1638416, 0, 0, 1638415, 0, 0, 1638414, 0, 0, 1638413, 0, 0, 1638412, 0, 0, 1638411, 0, 0, 1638410, 0, 0, 1638408, 0, 0, 1638407, 0, 0, 1638406, 0, 0, 1638405, 0, 0, 1638404, 0, 0, 1638403, 0, 0, 1638402, 0, 0, 1638401, 0, 0, 1638400, 0, 0, 1572864, 0, 0, 1572865, 0, 0, 1572866, 0, 0, 1572867, 0, 0, 1572868, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572872, 0, 0, 1572873, 0, 0, 1572874, 0, 0, 1572875, 0, 0, 1572876, 0, 0, 1572883, 0, 0, 1572882, 0, 0, 1572881, 0, 0, 1572880, 0, 0, 1572879, 0, 0, 1572878, 0, 0, 1572877, 0, 0, 1507328, 65536, 0, 1507329, 131072, 0, 1507330, 65536, 0, 1507331, 131072, 0, 1507332, 65536, 0, 1507333, 131072, 0, 1507334, 65536, 0, 1507335, 131072, 0, 1507336, 65536, 0, 1507337, 131072, 0, 1507338, 65536, 0, 1507339, 131072, 0, 1507340, 65536, 0, 1507341, 131072, 0, 1507342, 65536, 0, 1507343, 131072, 0, 1507344, 65536, 0, 1507345, 131072, 0, 1507346, 65536, 0, 1507347, 131072, 0, 1638409, 0, 0)
-
-[node name="seaweeds" type="Node2D" parent="."]
-
-[node name="Seaweed" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(25, 380)
-
-[node name="Seaweed2" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(295, 420)
-
-[node name="Seaweed3" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(70, 447)
-
-[node name="Seaweed4" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(237, 397)
-
-[node name="Seaweed5" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(196, 449)
-
-[node name="Seaweed6" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(97, 382)
-
-[node name="Seaweed7" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(273, 383)
-
-[node name="Seaweed8" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(132, 447)
-
-[node name="Seaweed9" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(247, 430)
-
-[node name="Seaweed10" parent="seaweeds" instance=ExtResource("11_mf14u")]
-position = Vector2(138, 399)
 
 [node name="background" parent="." instance=ExtResource("2_acv0d")]
 
@@ -86,7 +23,11 @@ position = Vector2(160, 200)
 
 [node name="Camera" parent="." instance=ExtResource("5_pjlgh")]
 
+[node name="JellyfishSpawner" parent="." instance=ExtResource("9_gnpvq")]
+
 [node name="FishSpawner" parent="." instance=ExtResource("6_gyndo")]
+
+[node name="DeepFishSpawner" parent="." instance=ExtResource("8_6xqhc")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_cxvy8")

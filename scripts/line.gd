@@ -16,6 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	global_rotation = 0
 	var direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		0	

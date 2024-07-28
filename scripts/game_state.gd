@@ -1,5 +1,6 @@
 extends Node
 
+var middle_reached: bool = false
 var bottom_reached: bool = false
 
 

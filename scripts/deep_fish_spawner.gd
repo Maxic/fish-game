@@ -1,20 +1,22 @@
 extends Node2D
 
-@onready var goldfish_scene = preload("res://scenes/goldfish.tscn")
-@onready var greyfish_scene = preload("res://scenes/greyfish.tscn")
-@onready var bluefish_scene = preload("res://scenes/bluefish.tscn")
+@onready var anglerfish_scene = preload("res://scenes/anglerfish.tscn")
+@onready var shark_scene = preload("res://scenes/shark.tscn")
 @onready var window_size = get_window().size
+var timer_started: bool = false
+
 
 func _ready():
 	randomize()
 
+func _physics_process(delta):
+	if GameState.middle_reached and not timer_started:
+		timer_started = true
+		$Timer.start()
 
 func _on_timer_timeout():
-	if GameState.middle_reached:
-		$Timer.stop()
-	
 	var spawn_pos_x = [-20, window_size.x+20][randi() % 2]
-	var fish_arr = [goldfish_scene, greyfish_scene, bluefish_scene]
+	var fish_arr = [shark_scene, anglerfish_scene]
 	var fish_scene = fish_arr[randi() %fish_arr.size()]
 	
 	var fish = fish_scene.instantiate()
