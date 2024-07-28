@@ -68,6 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxw5r"]
+radius = 8.0
 
 [node name="Bluefish" type="Node2D"]
 script = ExtResource("1_xqivf")

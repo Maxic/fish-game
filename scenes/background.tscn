@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkfmtdknv4r7b"]
+[gd_scene load_steps=10 format=3 uid="uid://dkfmtdknv4r7b"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_kemwl"]
+[ext_resource type="Texture2D" uid="uid://twc4srufrdpr" path="res://sprite_assets/bottom.png" id="2_j3s1i"]
+[ext_resource type="PackedScene" uid="uid://b5w8knm02pfwy" path="res://scenes/chest.tscn" id="3_rwt33"]
+[ext_resource type="PackedScene" uid="uid://q7uap5djet0d" path="res://scenes/seaweed.tscn" id="4_evakk"]
+[ext_resource type="Texture2D" uid="uid://cfl4ubu21mywk" path="res://sprite_assets/Corals.png" id="5_2uhgj"]
 
 [sub_resource type="Gradient" id="Gradient_04xi2"]
 offsets = PackedFloat32Array(0.0324675, 1)
@@ -8,6 +12,21 @@ colors = PackedColorArray(0, 0.407843, 1, 1, 0.0509804, 0.0745098, 0.105882, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_k385a"]
 gradient = SubResource("Gradient_04xi2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jba6o"]
+atlas = ExtResource("5_2uhgj")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bapc0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jba6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="background" type="Node2D"]
 rotation = 1.5708
@@ -26,3 +45,87 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = SubResource("GradientTexture2D_k385a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3231, -160.012)
+rotation = -1.5708
+texture = ExtResource("2_j3s1i")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2981, -157.011)
+
+[node name="Chest" parent="." instance=ExtResource("3_rwt33")]
+position = Vector2(3346, -154)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="seaweeds" type="Node2D" parent="."]
+
+[node name="Seaweed" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3350, -26.0001)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed2" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3405, -75.0002)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed3" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3365, -252)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed4" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3398, -290)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed5" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3414, -222)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed6" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3426, -119)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed7" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3416, -35.0002)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed8" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3371, -109)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed9" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3344, -306)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed10" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3450, -271)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="Seaweed11" parent="seaweeds" instance=ExtResource("4_evakk")]
+position = Vector2(3387, -184)
+rotation = -1.5708
+scale = Vector2(2, 2)
+
+[node name="coral" type="AnimatedSprite2D" parent="."]
+position = Vector2(3427, -253)
+rotation = -1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bapc0")
+
+[node name="coral2" type="AnimatedSprite2D" parent="."]
+position = Vector2(3380, -51.0002)
+rotation = -1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bapc0")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

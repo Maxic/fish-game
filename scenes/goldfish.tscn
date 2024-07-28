@@ -68,6 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfofw"]
+radius = 7.0
 
 [node name="Goldfish" type="Node2D"]
 script = ExtResource("1_uod02")
