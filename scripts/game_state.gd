@@ -2,6 +2,7 @@ extends Node
 
 var middle_reached: bool = false
 var bottom_reached: bool = false
+var chest_grabbed: bool = false
 
 
 # Called when the node enters the scene tree for the first time.

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var hook: Node = get_parent().get_node("hook")
 var direction: Vector2
-var speed: float = .55
+var speed: float = .65
 
 func _physics_process(delta):
 	

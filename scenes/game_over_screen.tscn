@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://main.gd" id="1_1n8u2"]
 [ext_resource type="Texture2D" uid="uid://b1wl8ty2njdmw" path="res://sprite_assets/desert_tiles.png" id="1_lo0g4"]
 [ext_resource type="PackedScene" uid="uid://q7uap5djet0d" path="res://scenes/seaweed.tscn" id="2_kwemf"]
-[ext_resource type="PackedScene" uid="uid://bw8pxrf3q6a3g" path="res://scenes/shark.tscn" id="3_yh3w1"]
 [ext_resource type="Texture2D" uid="uid://dk6itqmraneoy" path="res://sprite_assets/Clam - 16x16.png" id="4_wwcp6"]
 [ext_resource type="Shader" path="res://shaders/wave.gdshader" id="5_8e3j2"]
 [ext_resource type="Texture2D" uid="uid://pyocctxq1em6" path="res://sprite_assets/SeaAngler.png" id="5_dj5fa"]
 [ext_resource type="FontFile" uid="uid://bhnfop0absd7m" path="res://sprite_assets/m5x7.ttf" id="5_ufjpy"]
 [ext_resource type="Texture2D" uid="uid://ccrtbjqfoo6ug" path="res://sprite_assets/Chests-16x32.png" id="6_lvol0"]
+[ext_resource type="Texture2D" uid="uid://cr023ijrmhxqr" path="res://sprite_assets/light_circle.png" id="6_r117p"]
 [ext_resource type="AudioStream" uid="uid://bnlhyl3acxsub" path="res://sprite_assets/22. 5th-8th Place Results.mp3" id="10_t8xga"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oc61"]
@@ -152,39 +152,51 @@ layer_0/tile_data = PackedInt32Array(1900546, 0, 0, 1900547, 0, 0, 1900548, 0, 0
 
 [node name="Seaweed" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(55, 369)
+scale = Vector2(2, 2)
 
 [node name="Seaweed2" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(242, 417)
+scale = Vector2(2, 2)
 
 [node name="Seaweed3" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(217, 343)
+scale = Vector2(2, 2)
 
 [node name="Seaweed4" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(30, 430)
+scale = Vector2(2, 2)
 
 [node name="Seaweed5" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(129, 422)
+scale = Vector2(2, 2)
 
 [node name="Seaweed6" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(171, 373)
+scale = Vector2(2, 2)
 
 [node name="Seaweed7" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(89, 352)
+scale = Vector2(2, 2)
 
 [node name="Seaweed8" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(280, 374)
+scale = Vector2(2, 2)
 
 [node name="Seaweed9" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(299, 446)
+scale = Vector2(2, 2)
 
 [node name="Seaweed10" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(201, 452)
+scale = Vector2(2, 2)
 
 [node name="Seaweed11" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(77, 453)
+scale = Vector2(2, 2)
 
 [node name="Seaweed12" parent="." instance=ExtResource("2_kwemf")]
 position = Vector2(19, 346)
+scale = Vector2(2, 2)
 
 [node name="clam" type="AnimatedSprite2D" parent="."]
 position = Vector2(233, 383)
@@ -207,18 +219,29 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="anglerfish" type="AnimatedSprite2D" parent="."]
-position = Vector2(227, 173)
+position = Vector2(227, 94)
 sprite_frames = SubResource("SpriteFrames_p3yno")
 autoplay = "default"
 flip_h = true
 
-[node name="chest" type="AnimatedSprite2D" parent="."]
-position = Vector2(145, 354)
-sprite_frames = SubResource("SpriteFrames_ej5yh")
+[node name="PointLight2D" type="PointLight2D" parent="anglerfish"]
+position = Vector2(-13, -7)
+texture = ExtResource("6_r117p")
+
+[node name="anglerfish2" type="AnimatedSprite2D" parent="."]
+position = Vector2(68, 286)
+sprite_frames = SubResource("SpriteFrames_p3yno")
 autoplay = "default"
 
-[node name="Shark" parent="." instance=ExtResource("3_yh3w1")]
-position = Vector2(36, 283)
+[node name="PointLight2D" type="PointLight2D" parent="anglerfish2"]
+position = Vector2(13, -7)
+texture = ExtResource("6_r117p")
+
+[node name="chest" type="AnimatedSprite2D" parent="."]
+position = Vector2(145, 345)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ej5yh")
+autoplay = "default"
 
 [node name="Game Over" type="RichTextLabel" parent="."]
 material = SubResource("ShaderMaterial_h5rn4")

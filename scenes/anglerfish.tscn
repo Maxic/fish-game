@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d33wrl1i5li6l"]
+[gd_scene load_steps=14 format=3 uid="uid://d33wrl1i5li6l"]
 
 [ext_resource type="Texture2D" uid="uid://pyocctxq1em6" path="res://sprite_assets/SeaAngler.png" id="1_6k7he"]
 [ext_resource type="Script" path="res://scripts/anglerfish.gd" id="1_iwgop"]
@@ -68,6 +68,9 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8fmx"]
+radius = 9.0
+
 [node name="Anglerfish" type="Node2D"]
 script = ExtResource("1_iwgop")
 
@@ -84,4 +87,11 @@ texture = ExtResource("3_pso85")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_h8fmx")
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
