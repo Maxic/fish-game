@@ -71,7 +71,6 @@ animations = [{
 script = ExtResource("1_ehaf4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.510419, 0.594936, 0.707946, 1)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_i0drt")
 frame_progress = 0.813964

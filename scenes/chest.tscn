@@ -1,18 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5w8knm02pfwy"]
+[gd_scene load_steps=3 format=3 uid="uid://b5w8knm02pfwy"]
 
+[ext_resource type="Script" path="res://scenes/chest.gd" id="1_r3t8l"]
 [ext_resource type="Texture2D" uid="uid://c67pdqpm4dq4k" path="res://sprite_assets/chest_hook.png" id="1_x5o8h"]
 
 [node name="Chest" type="RigidBody2D"]
 collision_layer = 2
+mass = 0.5
+gravity_scale = 0.7
 center_of_mass_mode = 1
 center_of_mass = Vector2(2.08167e-16, 1)
+script = ExtResource("1_r3t8l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_x5o8h")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="hook" type="CollisionPolygon2D" parent="."]
 position = Vector2(6, -22)
 scale = Vector2(2, 2)
 build_mode = 1
 polygon = PackedVector2Array(0, -1, -6, -1, -8, 1, -8, 5, -7, 5, -7, 1, -5, 1, 0, 1, 0, 7, -1, 7, -3, 9, -5, 9, -5, 11, -11, 11, -11, 28, 5, 28, 5, 11, -1, 11, -1, 9, 0, 9, 2, 7, 2, 1)
+
+[node name="box" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -17)
+scale = Vector2(2.00001, 1)
+polygon = PackedVector2Array(-4, 5, -8, 5, -8, -7, 8, -7, 8, 8, -8, 8, -8, 5, -4, 6, -3, 5, 4, 5, 4, -3, -4, -3)
+disabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtdo52ovv26ln"]
+[gd_scene load_steps=13 format=3 uid="uid://dtdo52ovv26ln"]
 
 [ext_resource type="PackedScene" uid="uid://c2woqabtj2fun" path="res://scenes/hook.tscn" id="1_s2nei"]
 [ext_resource type="Script" path="res://main.gd" id="1_smu5s"]
@@ -10,6 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://b5ht8bann6apq" path="res://scenes/deep_fish_spawner.tscn" id="8_6xqhc"]
 [ext_resource type="PackedScene" uid="uid://d2vj3qhh5rr6d" path="res://scenes/overlay.tscn" id="8_owv5g"]
 [ext_resource type="PackedScene" uid="uid://dii26uwtnqvpl" path="res://scenes/jellyfish_spawner.tscn" id="9_gnpvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5rtp"]
+size = Vector2(20, 492)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7k4n"]
+size = Vector2(20, 494)
 
 [node name="root" type="Node"]
 script = ExtResource("1_smu5s")
@@ -38,3 +44,17 @@ current = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Overlay" parent="CanvasLayer" instance=ExtResource("8_owv5g")]
+
+[node name="left" type="StaticBody2D" parent="."]
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(-12, 236)
+shape = SubResource("RectangleShape2D_c5rtp")
+
+[node name="right" type="StaticBody2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(332, 237)
+shape = SubResource("RectangleShape2D_v7k4n")

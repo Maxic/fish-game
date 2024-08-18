@@ -12,6 +12,8 @@ func _physics_process(delta):
 	if GameState.middle_reached and not timer_started:
 		timer_started = true
 		$Timer.start()
+	if GameState.chest_grabbed:
+		$Timer.stop()
 
 func _on_timer_timeout():
 	var spawn_pos_x = [-20, window_size.x+20][randi() % 2]

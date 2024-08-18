@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends CharacterBody2D
 
 @export var speed: float = 70.0
 var direction: Vector2 = Vector2(1,1)
@@ -7,6 +7,8 @@ const hook_fallback_lerp_weight = .02
 var game_over: bool = false
 
 func _physics_process(delta):
+	if GameState.chest_grabbed:
+		$point_left.disabled = true
 	
 	direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),

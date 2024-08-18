@@ -3,6 +3,7 @@ extends Node2D
 @onready var swordfish_scene = preload("res://scenes/swordfish.tscn")
 @export var speed: float = 1
 var direction: Vector2 = Vector2(0,-1)
+@onready var window_size = get_window().size
 var scroll_down: bool = true
 var scroll_up: bool = false
 
@@ -10,7 +11,7 @@ var scroll_up: bool = false
 func _physics_process(delta):
 	if scroll_up:
 		direction = Vector2(0,1)
-		translate(direction * speed)
+		translate(direction * speed*2)
 	
 	if scroll_down:
 		translate(direction * speed)
@@ -26,10 +27,10 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	GameState.bottom_reached = true
 
 func _on_visible_on_screen_notifier_2d_swordfish_screen_exited():
-	var swordfish = swordfish_scene.instantiate()
-	
-	swordfish.position = Vector2(-10, 10)
-	get_parent().add_child(swordfish)
+	if GameState.chest_grabbed:
+		var swordfish = swordfish_scene.instantiate()
+		swordfish.position = Vector2(window_size.x/2, window_size.y+10)
+		get_parent().add_child(swordfish)
 
 
 func _on_box_area_body_entered(body):

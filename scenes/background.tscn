@@ -64,11 +64,13 @@ position = Vector2(1531, -166.006)
 position = Vector2(2981, -157.011)
 
 [node name="VisibleOnScreenNotifier2D_swordfish" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(2889, -160.01)
+position = Vector2(2423, -160.009)
 
 [node name="Chest" parent="." instance=ExtResource("3_rwt33")]
+unique_name_in_owner = true
 position = Vector2(3337, -160)
 rotation = -1.5708
+collision_layer = 3
 
 [node name="seaweeds" type="Node2D" parent="."]
 
@@ -146,15 +148,15 @@ position = Vector2(3397, -148)
 position = Vector2(14, -17)
 shape = SubResource("RectangleShape2D_q43xv")
 
-[node name="box_area" type="Area2D" parent="."]
-position = Vector2(3100, -160)
+[node name="check_for_chest_area" type="Area2D" parent="."]
+position = Vector2(3184, -160.012)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check_for_chest_area"]
 shape = SubResource("RectangleShape2D_6y666")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D_mid" to="." method="_on_visible_on_screen_notifier_2d_mid_screen_exited"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D_swordfish" to="." method="_on_visible_on_screen_notifier_2d_swordfish_screen_exited"]
-[connection signal="body_entered" from="box_area" to="." method="_on_box_area_body_entered"]
+[connection signal="body_entered" from="check_for_chest_area" to="." method="_on_box_area_body_entered"]

@@ -3,6 +3,7 @@ extends Node2D
 var speed: float = 1
 var direction: Vector2 = Vector2(1, 1)
 var flipped: bool = false
+var new_speed = false
 
 func _ready():
 	randomize()
@@ -17,6 +18,10 @@ func _ready():
 
 
 func _physics_process(_delta):
+	if GameState.chest_grabbed and not new_speed:
+		new_speed = true
+		direction.y *= 2
+	
 	if not SceneManager.game_over:
 		translate(direction * speed)
 

@@ -17,6 +17,8 @@ func _physics_process(delta):
 	if not SceneManager.game_over:
 		if GameState.bottom_reached:
 			direction.y = 0	
+		if GameState.chest_grabbed:
+			direction.y = 2
 		translate(direction * speed)
 
 	
