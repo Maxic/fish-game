@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0mx85xhk08q2"]
+
+[ext_resource type="Texture2D" uid="uid://ddvjffgx6k6r4" path="res://sprite_assets/zwaan.png" id="1_inchi"]
+[ext_resource type="Script" path="res://scenes/zwaan.gd" id="2_6rs43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kynby"]
+atlas = ExtResource("1_inchi")
+region = Rect2(0, 0, 52, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20bkp"]
+atlas = ExtResource("1_inchi")
+region = Rect2(52, 0, 52, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_412nd"]
+atlas = ExtResource("1_inchi")
+region = Rect2(104, 0, 52, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbcm1"]
+atlas = ExtResource("1_inchi")
+region = Rect2(156, 0, 52, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rcbs"]
+atlas = ExtResource("1_inchi")
+region = Rect2(208, 0, 52, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_drm0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kynby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20bkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_412nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbcm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rcbs")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="zwaan" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_drm0o")
+animation = &"new_animation"
+autoplay = "new_animation"
+script = ExtResource("2_6rs43")

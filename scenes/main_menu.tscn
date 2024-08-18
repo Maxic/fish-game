@@ -1,6 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvtksg8x1l3rs"]
+[gd_scene load_steps=17 format=3 uid="uid://bvtksg8x1l3rs"]
 
 [ext_resource type="Texture2D" uid="uid://rjfdcyolaeve" path="res://sprite_assets/main_menu_sheet.png" id="1_gkffa"]
+[ext_resource type="Texture2D" uid="uid://dta6a2s4pxm5f" path="res://sprite_assets/start.png" id="2_dg4cy"]
+[ext_resource type="Script" path="res://scripts/zwaan_spawn.gd" id="3_7m4p7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hilvl"]
 atlas = ExtResource("1_gkffa")
@@ -96,7 +98,25 @@ animations = [{
 
 [node name="MainMenu" type="Node"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="boot" type="AnimatedSprite2D" parent="."]
 position = Vector2(160, 242)
 sprite_frames = SubResource("SpriteFrames_fyb2a")
 autoplay = "default"
+
+[node name="Control" type="Control" parent="boot"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="boot/Control"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = -119.0
+offset_right = 90.0
+offset_bottom = -47.0
+icon = ExtResource("2_dg4cy")
+flat = true
+
+[node name="zwaanSpawner" type="Node2D" parent="."]
+script = ExtResource("3_7m4p7")
