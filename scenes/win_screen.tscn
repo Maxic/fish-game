@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0fbe41s1xfha"]
+
+[ext_resource type="Texture2D" uid="uid://7uc225ak1dpj" path="res://sprite_assets/Wooden Chest 1 -  Spritesheet.png" id="1_3sdya"]
+[ext_resource type="Texture2D" uid="uid://dwcsp1q5yt4rd" path="res://sprite_assets/light.png" id="2_a0s53"]
+[ext_resource type="Texture2D" uid="uid://cr023ijrmhxqr" path="res://sprite_assets/light_circle.png" id="2_r7fih"]
+[ext_resource type="Texture2D" uid="uid://blsmdup5lqy0o" path="res://sprite_assets/winner_bg.png" id="2_uxwrq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tgs70"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w3gar"]
+particle_flag_disable_z = true
+radial_velocity_min = 67.42
+radial_velocity_max = 179.78
+gravity = Vector3(0, -100, 0)
+linear_accel_min = 25.0
+linear_accel_max = 100.0
+scale_min = 0.1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmjqm"]
+atlas = ExtResource("1_3sdya")
+region = Rect2(0, 0, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dupsh"]
+atlas = ExtResource("1_3sdya")
+region = Rect2(48, 0, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b45dv"]
+atlas = ExtResource("1_3sdya")
+region = Rect2(96, 0, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbl11"]
+atlas = ExtResource("1_3sdya")
+region = Rect2(144, 0, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4l2t"]
+atlas = ExtResource("1_3sdya")
+region = Rect2(192, 0, 48, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vm5ur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmjqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dupsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b45dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbl11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4l2t")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(161, 240)
+texture = ExtResource("2_uxwrq")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 480)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_tgs70")
+position = Vector2(163, 257)
+amount = 160
+process_material = SubResource("ParticleProcessMaterial_w3gar")
+texture = ExtResource("2_a0s53")
+explosiveness = 0.1
+randomness = 0.5
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(163, 228)
+scale = Vector2(2.48438, 2.48438)
+texture = ExtResource("2_r7fih")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(163, 260)
+sprite_frames = SubResource("SpriteFrames_vm5ur")
+autoplay = "default"
