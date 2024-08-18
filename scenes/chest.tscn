@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5w8knm02pfwy"]
 
-[ext_resource type="Script" path="res://scenes/chest.gd" id="1_r3t8l"]
+[ext_resource type="Script" path="res://scripts/chest.gd" id="1_r3t8l"]
 [ext_resource type="Texture2D" uid="uid://c67pdqpm4dq4k" path="res://sprite_assets/chest_hook.png" id="1_x5o8h"]
 
 [node name="Chest" type="RigidBody2D"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bvtksg8x1l3rs"]
+[gd_scene load_steps=18 format=3 uid="uid://bvtksg8x1l3rs"]
 
 [ext_resource type="Texture2D" uid="uid://rjfdcyolaeve" path="res://sprite_assets/main_menu_sheet.png" id="1_gkffa"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_phlw7"]
 [ext_resource type="Texture2D" uid="uid://dta6a2s4pxm5f" path="res://sprite_assets/start.png" id="2_dg4cy"]
 [ext_resource type="Script" path="res://scripts/zwaan_spawn.gd" id="3_7m4p7"]
 
@@ -97,6 +98,7 @@ animations = [{
 }]
 
 [node name="MainMenu" type="Node"]
+script = ExtResource("1_phlw7")
 
 [node name="boot" type="AnimatedSprite2D" parent="."]
 position = Vector2(160, 242)
@@ -120,3 +122,5 @@ flat = true
 
 [node name="zwaanSpawner" type="Node2D" parent="."]
 script = ExtResource("3_7m4p7")
+
+[connection signal="pressed" from="boot/Control/Button" to="." method="_on_button_pressed"]

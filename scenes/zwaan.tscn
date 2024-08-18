@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c0mx85xhk08q2"]
 
 [ext_resource type="Texture2D" uid="uid://ddvjffgx6k6r4" path="res://sprite_assets/zwaan.png" id="1_inchi"]
-[ext_resource type="Script" path="res://scenes/zwaan.gd" id="2_6rs43"]
+[ext_resource type="Script" path="res://scripts/zwaan.gd" id="2_6rs43"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kynby"]
 atlas = ExtResource("1_inchi")
