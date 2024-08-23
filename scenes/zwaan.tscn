@@ -1,7 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0mx85xhk08q2"]
+[gd_scene load_steps=15 format=3 uid="uid://c0mx85xhk08q2"]
 
 [ext_resource type="Texture2D" uid="uid://ddvjffgx6k6r4" path="res://sprite_assets/zwaan.png" id="1_inchi"]
+[ext_resource type="Texture2D" uid="uid://5nc06334srwd" path="res://sprite_assets/zwaan-sheet.png" id="1_xre3i"]
 [ext_resource type="Script" path="res://scripts/zwaan.gd" id="2_6rs43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc0qx"]
+atlas = ExtResource("1_xre3i")
+region = Rect2(0, 0, 52, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16vyh"]
+atlas = ExtResource("1_xre3i")
+region = Rect2(52, 0, 52, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oewam"]
+atlas = ExtResource("1_xre3i")
+region = Rect2(104, 0, 52, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m53ej"]
+atlas = ExtResource("1_xre3i")
+region = Rect2(156, 0, 52, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evjfd"]
+atlas = ExtResource("1_xre3i")
+region = Rect2(208, 0, 52, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kynby"]
 atlas = ExtResource("1_inchi")
@@ -27,6 +48,26 @@ region = Rect2(208, 0, 52, 28)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hc0qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16vyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oewam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m53ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evjfd")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kynby")
 }, {
 "duration": 1.0,
@@ -48,6 +89,6 @@ animations = [{
 
 [node name="zwaan" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_drm0o")
-animation = &"new_animation"
-autoplay = "new_animation"
+animation = &"flying"
+autoplay = "flying"
 script = ExtResource("2_6rs43")

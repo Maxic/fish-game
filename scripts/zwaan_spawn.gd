@@ -12,11 +12,11 @@ func _ready():
 func _process(delta):
 	time += delta
 	if time > 3:
-		var zwaan_amount = randi_range(0,3)
+		var zwaan_amount = randi_range(0,2)
 		for x in zwaan_amount:
 			var zwaan_inst = zwaan_scene.instantiate()
-			zwaan_inst.position = Vector2(window_size.x+50, randi_range(10,100))
-			zwaan_inst.speed = 10+randi_range(0,5)
+			zwaan_inst.position = Vector2(randi_range(window_size.x+50, window_size.x+80), randi_range(10,100))
+			zwaan_inst.speed = 10+randi_range(5,15)
 			add_child(zwaan_inst)
 			time = -10
 			
