@@ -17,7 +17,7 @@ func _physics_process(delta):
 	direction = direction.normalized() * speed
 	
 	# Game over, stop all movement
-	if GameState.game_over:
+	if GameState.game_over or GameState.game_won:
 		direction = Vector2(0,0)
 	
 	# Rotate as if being dragged

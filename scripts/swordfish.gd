@@ -18,3 +18,8 @@ func _physics_process(delta):
 	
 	if not (GameState.game_over or GameState.game_won):
 		translate(direction.normalized() * speed)
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == "hook":
+		GameState.game_over = true

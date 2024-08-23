@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://bvtksg8x1l3rs"]
+[gd_scene load_steps=22 format=3 uid="uid://bvtksg8x1l3rs"]
 
 [ext_resource type="Texture2D" uid="uid://rjfdcyolaeve" path="res://sprite_assets/main_menu_sheet.png" id="1_gkffa"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_phlw7"]
 [ext_resource type="Texture2D" uid="uid://dta6a2s4pxm5f" path="res://sprite_assets/start.png" id="2_dg4cy"]
 [ext_resource type="Script" path="res://scripts/zwaan_spawn.gd" id="3_7m4p7"]
+[ext_resource type="Script" path="res://scenes/Button.gd" id="4_cgico"]
+[ext_resource type="FontFile" uid="uid://bhnfop0absd7m" path="res://sprite_assets/m5x7.ttf" id="4_rmqa0"]
 [ext_resource type="AudioStream" uid="uid://d7xy2jdncc4b" path="res://sprite_assets/04. Koopa Troopa Beach.mp3" id="5_jyk76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hilvl"]
@@ -98,6 +100,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgnxc"]
+
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_phlw7")
 
@@ -109,17 +113,33 @@ autoplay = "default"
 [node name="Control" type="Control" parent="boot"]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 272.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 312.0
 
 [node name="Button" type="Button" parent="boot/Control"]
 layout_mode = 0
-offset_left = -76.0
-offset_top = -119.0
-offset_right = 90.0
-offset_bottom = -47.0
+offset_left = -142.0
+offset_top = -325.0
+offset_right = 24.0
+offset_bottom = -253.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qgnxc")
 icon = ExtResource("2_dg4cy")
 flat = true
+script = ExtResource("4_cgico")
+
+[node name="Label" type="Label" parent="boot/Control"]
+layout_mode = 0
+offset_left = -161.0
+offset_top = -431.0
+offset_right = 45.0
+offset_bottom = -347.0
+theme_override_fonts/font = ExtResource("4_rmqa0")
+theme_override_font_sizes/font_size = 32
+text = "Ellie en Ted: 
+Op zoek naar 
+het kado"
+horizontal_alignment = 1
 
 [node name="zwaanSpawner" type="Node2D" parent="."]
 script = ExtResource("3_7m4p7")

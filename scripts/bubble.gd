@@ -7,7 +7,8 @@ func _ready():
 	speed = randf_range(.7, 1.3)
 
 func _physics_process(delta):
-	translate(direction * speed)
+	if not GameState.game_won:
+		translate(direction * speed)
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
