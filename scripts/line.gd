@@ -1,7 +1,7 @@
 extends Line2D
 
 var global_line_origin: Vector2
-@onready var window_size = get_window().size
+var window_size = Vector2(320, 480)
 @onready var sprite_position = get_node("../Sprite2D").position
 var points_amount = 100
 
@@ -22,7 +22,7 @@ func _physics_process(delta):
 		0	
 	)
 	
-	if SceneManager.game_over:
+	if GameState.game_over:
 		direction = Vector2(0,0)
 	
 	# Get new origin point

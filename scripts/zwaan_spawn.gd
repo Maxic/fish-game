@@ -2,7 +2,7 @@ extends Node2D
 
 var time: float
 var zwaan_scene = load("res://scenes/zwaan.tscn")
-@onready var window_size = get_window().size
+@onready var window_size = Vector2(320, 480)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

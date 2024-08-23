@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvtksg8x1l3rs"]
+[gd_scene load_steps=19 format=3 uid="uid://bvtksg8x1l3rs"]
 
 [ext_resource type="Texture2D" uid="uid://rjfdcyolaeve" path="res://sprite_assets/main_menu_sheet.png" id="1_gkffa"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_phlw7"]
 [ext_resource type="Texture2D" uid="uid://dta6a2s4pxm5f" path="res://sprite_assets/start.png" id="2_dg4cy"]
 [ext_resource type="Script" path="res://scripts/zwaan_spawn.gd" id="3_7m4p7"]
+[ext_resource type="AudioStream" uid="uid://d7xy2jdncc4b" path="res://sprite_assets/04. Koopa Troopa Beach.mp3" id="5_jyk76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hilvl"]
 atlas = ExtResource("1_gkffa")
@@ -122,5 +123,9 @@ flat = true
 
 [node name="zwaanSpawner" type="Node2D" parent="."]
 script = ExtResource("3_7m4p7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jyk76")
+autoplay = true
 
 [connection signal="pressed" from="boot/Control/Button" to="." method="_on_button_pressed"]

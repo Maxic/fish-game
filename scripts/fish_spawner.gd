@@ -3,7 +3,7 @@ extends Node2D
 @onready var goldfish_scene = preload("res://scenes/goldfish.tscn")
 @onready var greyfish_scene = preload("res://scenes/greyfish.tscn")
 @onready var bluefish_scene = preload("res://scenes/bluefish.tscn")
-@onready var window_size = get_window().size
+@onready var window_size = Vector2(320, 480)
 
 func _ready():
 	randomize()

@@ -22,7 +22,7 @@ func _physics_process(_delta):
 		new_speed = true
 		direction.y *= 2
 	
-	if not SceneManager.game_over:
+	if not GameState.game_over:
 		translate(direction * speed)
 
 
@@ -32,4 +32,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_area_2d_body_entered(body):
 	if body.name == "hook":
-		SceneManager.game_over = true
+		GameState.game_over = true

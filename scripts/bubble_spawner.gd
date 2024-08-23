@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var bubble_scene = preload("res://scenes/bubble.tscn")
-@onready var window_size = get_window().size
+@onready var window_size = Vector2(320, 480)
 
 func _on_timer_timeout():
 	var bubble = bubble_scene.instantiate()

@@ -17,7 +17,7 @@ func _physics_process(delta):
 	direction = direction.normalized() * speed
 	
 	# Game over, stop all movement
-	if SceneManager.game_over:
+	if GameState.game_over:
 		direction = Vector2(0,0)
 	
 	# Rotate as if being dragged
@@ -34,5 +34,4 @@ func _physics_process(delta):
 	translate(direction * delta)
 	
 func hit():
-	SceneManager.game_over = true
-	#SceneManager.goto_game_over_screen()
+	GameState.game_over = true

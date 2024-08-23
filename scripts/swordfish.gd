@@ -16,5 +16,5 @@ func _physics_process(delta):
 
 	direction = hook.position - self.position
 	
-	if not SceneManager.game_over:
+	if not (GameState.game_over or GameState.game_won):
 		translate(direction.normalized() * speed)

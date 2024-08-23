@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var anglerfish_scene = preload("res://scenes/anglerfish.tscn")
-@onready var window_size = get_window().size
+@onready var window_size = Vector2(320, 480)
 var timer_started: bool = false
 
 
