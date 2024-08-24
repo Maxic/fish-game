@@ -11,4 +11,6 @@ func _process(delta):
 	time += delta
 	if time > 2:
 		if self.scale.x <= 1:
+				position.y -= 1
 				self.scale += Vector2(delta,delta)
+	

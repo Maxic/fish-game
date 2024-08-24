@@ -1,13 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0fbe41s1xfha"]
+[gd_scene load_steps=20 format=3 uid="uid://d0fbe41s1xfha"]
 
 [ext_resource type="Texture2D" uid="uid://7uc225ak1dpj" path="res://sprite_assets/Wooden Chest 1 -  Spritesheet.png" id="1_3sdya"]
 [ext_resource type="Texture2D" uid="uid://cr023ijrmhxqr" path="res://sprite_assets/light_circle.png" id="2_r7fih"]
 [ext_resource type="Texture2D" uid="uid://blsmdup5lqy0o" path="res://sprite_assets/winner_bg.png" id="2_uxwrq"]
 [ext_resource type="Script" path="res://scripts/CPUParticles2D.gd" id="3_dsglt"]
-[ext_resource type="AudioStream" uid="uid://dm0vxpy1mdv2s" path="res://sprite_assets/short-crowd-cheer-6713.mp3" id="4_st01t"]
+[ext_resource type="FontFile" uid="uid://bhnfop0absd7m" path="res://sprite_assets/m5x7.ttf" id="4_gqs3q"]
 [ext_resource type="Texture2D" uid="uid://dwcsp1q5yt4rd" path="res://sprite_assets/light.png" id="5_08re3"]
 [ext_resource type="Texture2D" uid="uid://bt5daskuh6fr7" path="res://sprite_assets/book.png" id="6_bojro"]
+[ext_resource type="Shader" path="res://scenes/book.gdshader" id="6_tvv1d"]
 [ext_resource type="Script" path="res://scripts/book.gd" id="7_54piu"]
+[ext_resource type="AudioStream" uid="uid://u2ux6e0krwcb" path="res://sprite_assets/15 1st Goal.mp3" id="8_68wa7"]
+[ext_resource type="Texture2D" uid="uid://i5pl134qr2ct" path="res://sprite_assets/light_circle_jelly.png" id="10_ktvqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vmjqm"]
 atlas = ExtResource("1_3sdya")
@@ -52,6 +55,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2o3fd"]
+shader = ExtResource("6_tvv1d")
+shader_parameter/normal_offset = 1.5
+shader_parameter/time_influence = 3.0
+shader_parameter/y_div = 2.87
+
+[sub_resource type="Curve" id="Curve_4opmm"]
+_data = [Vector2(0, 0.991711), 0.0, 0.0, 0, 0, Vector2(0.997831, 0.00409913), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Node" type="Node"]
 
 [node name="bg" type="Sprite2D" parent="."]
@@ -78,12 +91,6 @@ initial_velocity_max = 100.0
 scale_amount_max = 4.0
 script = ExtResource("3_dsglt")
 
-[node name="Label" type="Label" parent="CPUParticles2D"]
-offset_left = -26.0
-offset_top = 59.0
-offset_right = 14.0
-offset_bottom = 82.0
-
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(163, 228)
 scale = Vector2(2.48438, 2.48438)
@@ -96,12 +103,41 @@ sprite_frames = SubResource("SpriteFrames_vm5ur")
 autoplay = "default"
 
 [node name="book" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2o3fd")
 position = Vector2(160, 262)
 texture = ExtResource("6_bojro")
 script = ExtResource("7_54piu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_st01t")
+stream = ExtResource("8_68wa7")
 volume_db = 2.0
 pitch_scale = 1.2
 autoplay = true
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(162, 357)
+amount = 250
+texture = ExtResource("10_ktvqy")
+emission_shape = 3
+emission_rect_extents = Vector2(95.25, 27.17)
+direction = Vector2(2.08165e-12, 2.08165e-12)
+spread = 175.12
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 20.83
+initial_velocity_max = 20.83
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_4opmm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 68.0
+offset_top = 326.0
+offset_right = 254.0
+offset_bottom = 381.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_gqs3q")
+theme_override_font_sizes/font_size = 32
+text = "Lieve Ellie en Ted
+Gefeliciteerd!"
+horizontal_alignment = 1
