@@ -24,7 +24,10 @@ script = ExtResource("1_smu5s")
 [node name="BubbleSpawner" parent="." instance=ExtResource("3_wt08c")]
 
 [node name="hook" parent="." instance=ExtResource("1_s2nei")]
+unique_name_in_owner = true
 position = Vector2(160, 200)
+collision_layer = 3
+collision_mask = 3
 
 [node name="JellyfishSpawner" parent="." instance=ExtResource("9_gnpvq")]
 
@@ -44,7 +47,6 @@ current = true
 [node name="Overlay" parent="CanvasLayer" instance=ExtResource("8_owv5g")]
 
 [node name="left" type="StaticBody2D" parent="."]
-disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
 position = Vector2(-12, 236)

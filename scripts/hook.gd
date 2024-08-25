@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 70.0
+@export var speed: float = 50.0
 var direction: Vector2 = Vector2(1,1)
 
 const hook_fallback_lerp_weight = .02
@@ -30,8 +30,8 @@ func _physics_process(delta):
 		if look_at_point.y < self.global_position.y:
 			look_at_point.y = self.global_position.y +2
 		rotation = lerp_angle(rotation, rotation + get_angle_to(look_at_point)-PI/2, hook_fallback_lerp_weight)
-
-	translate(direction * delta)
+	velocity = direction * delta * speed
+	move_and_slide()
 	
 func hit():
 	GameState.game_over = true
